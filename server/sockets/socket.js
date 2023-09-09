@@ -19,7 +19,7 @@ io.on("connection", (client) => {
 
     client.broadcast
       .to(data.sala)
-      .emit("listaPersonas", usuarios.getPersonasPorSala(data.sala));
+      .emit("listaPersona", usuarios.getPersonasPorSala(data.sala));
 
     callback(usuarios.getPersonasPorSala(data.sala));
   });
@@ -41,7 +41,7 @@ io.on("connection", (client) => {
       );
     client.broadcast
       .to(persona.sala)
-      .emit("listaPersonas", usuarios.getPersonasPorSala(persona.sala));
+      .emit("listaPersona", usuarios.getPersonasPorSala(persona.sala));
   });
 
   client.on("mensajePrivado", (data) => {
